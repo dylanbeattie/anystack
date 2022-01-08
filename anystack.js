@@ -187,6 +187,7 @@ var lists = [
         "ANSI.SYS",
         "Bootstrap",
         "Backbone",
+        "Blazor",
         "CLI",
         "CUDA",
         "Coffescript",
