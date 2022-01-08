@@ -22,3 +22,10 @@ dd {
     margin: 8px;
     text-align: center;
 }
+
+footer {
+    font-size: 80%;    
+}
+footer a { 
+    color: #69c;
+}
