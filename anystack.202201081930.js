@@ -240,6 +240,9 @@ function stack(word) {
     var result = new Array();
     word = word.toLowerCase();
     for (var i = 0; i < word.length; i++) {
+        if (!word[i].match(/[a-zA-Z]/)) {
+            continue;
+        }
         var index = i < lists.length ? i : lists.length - 1;
         var list = lists[index];
         var items = list.filter(w => w.toLowerCase().startsWith(word[i]));
