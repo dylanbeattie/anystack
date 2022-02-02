@@ -258,4 +258,8 @@ function updateStack(word) {
 }
 
 document.getElementById("stack-name-input").addEventListener("keyup", evt => updateStack(evt.target.value));
-window.addEventListener("load", evt => updateStack(window.location.hash.substring(1)));
+window.addEventListener("load", evt => {
+    var word = window.location.hash.substring(1);
+    document.getElementById('stack-name-input').value = word;
+    updateStack(word);
+});
