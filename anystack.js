@@ -23,4 +23,5 @@ function updateStack(evt) {
         element.innerHTML = items[key];
     })
 }
-document.getElementById("stack-name-input").addEventListener("keyup", updateStack);    
+document.getElementById("stack-name-input").addEventListener("keyup", updateStack);
+window.addEventListener("load", function () { console.log("loaded"); });

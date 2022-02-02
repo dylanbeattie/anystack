@@ -248,12 +248,13 @@ function stack(word) {
     }
     return (result);
 }
-function updateStack(evt) {
-    var word = evt.target.value;
+function updateStack(word) {
+    window.location.hash = word;
     var items = stack(word);
     var html = items.map(item => ((item.title ? `<dt>${item.title}:</dt>` : '') + `<dd>${item.value}</dd>`)).join("");
     document.getElementById("stack").innerHTML = html;
 }
 
-document.getElementById("stack-name-input").addEventListener("keyup",
-    updateStack);    
+document.getElementById("stack-name-input").addEventListener("keyup", evt => updateStack(evt.target.value));
+
+window.addEventListener("load", evt => updateStack(window.location.hash.substring(1)));
