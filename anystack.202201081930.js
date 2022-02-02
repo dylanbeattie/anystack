@@ -14,6 +14,7 @@ var lists = [
         "IRIX",
         "iOS",
         "JavaOS",
+        "Java applets",
         "Kali Linux",
         "Linux",
         "MS-DOS",
@@ -240,6 +241,7 @@ function stack(word) {
     var result = new Array();
     word = word.toLowerCase();
     for (var i = 0; i < word.length; i++) {
+        if (!word[i].match(/[a-zA-Z]/)) continue;
         var index = i < lists.length ? i : lists.length - 1;
         var list = lists[index];
         var items = list.filter(w => w.toLowerCase().startsWith(word[i]));
@@ -256,5 +258,4 @@ function updateStack(word) {
 }
 
 document.getElementById("stack-name-input").addEventListener("keyup", evt => updateStack(evt.target.value));
-
 window.addEventListener("load", evt => updateStack(window.location.hash.substring(1)));
